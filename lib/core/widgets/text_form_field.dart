@@ -1,14 +1,20 @@
+
+import 'package:bookia_store_app/core/constants/app_images.dart';
+import 'package:bookia_store_app/core/utils/app_colors.dart';
+import 'package:bookia_store_app/core/utils/text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 
 class MyTextFormField extends StatelessWidget {
-  const MyTextFormField(
+  const  MyTextFormField(
       {super.key,
       required this.hintText,
       required this.validateMessage,
       required this.controller,
       required this.keyboardType,
-       this.suffixPressed ,
-       this.suffixIcon });
+      this.suffixPressed,  this.suffixIcon, this.readOnly=false, this.onTap
+       });
 
   final String hintText;
 
@@ -19,45 +25,58 @@ class MyTextFormField extends StatelessWidget {
   final TextInputType keyboardType;
 
   final bool isPassword = false;
+  final bool readOnly ;
 
-  final Function() ? suffixPressed;
+  final Function()? suffixPressed;
+  final Function()? onTap ;
+  final Widget? suffixIcon ;
 
-  final   IconData  ? suffixIcon ;
+
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onTap: onTap,
       controller: controller,
       keyboardType: keyboardType,
+      readOnly: readOnly ,
       obscureText: isPassword,
       decoration: InputDecoration(
-          filled: true,
-          fillColor:const Color.fromARGB(255, 247, 248, 249),
-          hintText: hintText,
-          suffix: (suffixIcon != null && suffixPressed != null)
-              ? IconButton(
-            onPressed: suffixPressed,
-            icon: Icon(suffixIcon),
-          )
-              : null,
-          hintStyle: const TextStyle(
-            fontSize: 15,
-            color: Color(0xFF8391A1),
-          ),
-         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+        filled: true,
+        fillColor: AppColors.accentColor,
+        hintText: hintText,
+        suffix: ( suffixPressed != null)
+            ? IconButton(
+                onPressed: suffixPressed,
+                icon: SvgPicture.asset(AppImages.eyeSvg),
+              )
+            : null,
+        suffixIcon: suffixIcon,
+        hintStyle: TextStyles.textStyle15.copyWith(
+          color: AppColors.greyColor,
+        ) ,
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
           borderSide: const BorderSide(
-            color: Color(0xFFE8ECF4), // لون البوردر لما يكون مش فوكس
-            width: 2,                 // سمك البوردر
+            color: AppColors.borderColor,
           ),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(8),
           borderSide: const BorderSide(
-            color: Color(0xFFE8ECF4), // نفس لون البوردر العادي
-            width: 2,
+            color: AppColors.borderColor,
+
           ),
         ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide:const  BorderSide(color: AppColors.errorColor),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide:const  BorderSide(color: AppColors.errorColor),
+        ),
+
       ),
       validator: (value) {
         if (value!.isEmpty) {

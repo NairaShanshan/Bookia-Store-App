@@ -1,3 +1,4 @@
+
 import 'package:bookia_store_app/features/auth/data/models/requests/auth_params.dart';
 import 'package:bookia_store_app/features/auth/data/repo/auth_repo.dart';
 import 'package:bookia_store_app/features/auth/presentation/cubit/auth_states.dart';
@@ -33,23 +34,21 @@ class AuthCubit extends Cubit<AuthStates> {
       emit(AuthSuccessState()) ;
     }else {
       emit(AuthErrorState()) ;
+
     }
   }
 
-  login() async {
-    emit(AuthLoadingState());
-
+  login () async{
+    emit(AuthLoadingState()) ;
     var params = AuthParameters(
-      email: emailController.text,
-      password: passwordController.text,
-    );
-
-    var res = await AuthRepo.login(params);
-
-    if (res != null) {
-      emit(AuthSuccessState());
-    } else {
-      emit(AuthErrorState());
+      email: emailController.text ,
+      password: passwordController.text ,
+    ) ;
+    var res = await AuthRepo.login(params) ;
+    if(res != null ) {
+      emit(AuthSuccessState()) ;
+    }else{
+      emit(AuthErrorState()) ;
     }
   }
 

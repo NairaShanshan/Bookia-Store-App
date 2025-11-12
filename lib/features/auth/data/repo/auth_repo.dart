@@ -15,7 +15,7 @@ class AuthRepo {
         data: params.toJson(), // convert map to json
       );
 
-      if (res.statusCode == 200) {
+      if (res.statusCode == 201) {   // if res.statusCode == 201 will give error
         //parse json to object
 
         return AuthResponse.fromJson(res.data) ;
@@ -67,7 +67,7 @@ class AuthRepo {
 
 
 
-
+// i did my account => naira , nairashanshan44@gmail.com , 12345678
 
 
 

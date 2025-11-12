@@ -1,9 +1,8 @@
-import 'package:bookia_store_app/core/routes/navigations.dart';
+
 import 'package:bookia_store_app/core/utils/app_colors.dart';
 import 'package:bookia_store_app/core/utils/text_styles.dart';
 import 'package:bookia_store_app/core/widgets/elevated_button.dart';
-import 'package:bookia_store_app/features/auth/presentation/pages/login_screen.dart';
-import 'package:bookia_store_app/features/home/presentation/pages/home_screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -21,7 +20,7 @@ class _PasswordChangedState extends State<PasswordChanged> {
     // TODO: implement initState
     super.initState();
     Future.delayed(const Duration(seconds: 3) , (){
-      pushReplacementTo(context,  HomeScreen()) ;
+      //pushReplacementTo(context,  HomeScreen()) ;
     } ) ;
   }
 
@@ -49,7 +48,7 @@ class _PasswordChangedState extends State<PasswordChanged> {
               )  ),
             const SizedBox(height: 50,),
             MyElevatedButton(onPressed: (){
-              pushTo(context, LoginScreen()) ;
+             // pushTo(context, LoginScreen()) ;
 
             },
                 text: 'Back to Login')

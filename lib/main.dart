@@ -1,6 +1,8 @@
 
+import 'package:bookia_store_app/core/routes/routes.dart';
 import 'package:bookia_store_app/core/services/dio_provider.dart';
-import 'package:bookia_store_app/features/splash/splash_screen.dart';
+import 'package:bookia_store_app/core/utils/app_colors.dart';
+import 'package:bookia_store_app/core/utils/app_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,7 +22,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -28,7 +29,8 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (_ , child) {
-        return MaterialApp(
+        return MaterialApp.router(
+          routerConfig: Routes.routes,
           debugShowCheckedModeBanner: false ,
           theme: ThemeData(
             appBarTheme:const  AppBarTheme(
@@ -37,14 +39,22 @@ class MyApp extends StatelessWidget {
                   statusBarColor: Colors.white,
                 statusBarIconBrightness: Brightness.dark
               ),
-              backgroundColor: Colors.white ,
-              elevation: 0.0
+              backgroundColor: AppColors.backgroundColor,
+              elevation: 0.0,
+              surfaceTintColor: Colors.transparent ,
 
           ),
+            fontFamily: AppFonts.dmSerifDisplay,
+            scaffoldBackgroundColor: AppColors.backgroundColor ,
+            bottomNavigationBarTheme:const  BottomNavigationBarThemeData(
+              backgroundColor: Colors.white ,
+              type: BottomNavigationBarType.fixed ,
+              showSelectedLabels: false,
+              showUnselectedLabels: false ,
+            ) ,
 
-            scaffoldBackgroundColor: Colors.white
           )  ,
-          home: SplashScreen()  ,
+
         ) ;
       },
 

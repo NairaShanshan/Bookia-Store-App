@@ -3,10 +3,11 @@ import 'dart:async';
 import 'package:bookia_store_app/core/routes/navigations.dart';
 import 'package:bookia_store_app/core/utils/app_colors.dart';
 import 'package:bookia_store_app/core/utils/text_styles.dart';
-import 'package:bookia_store_app/features/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../core/routes/routes.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -20,8 +21,8 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer.periodic(const Duration(seconds: 2), (timer) {
-     pushReplacementTo(context, WelcomeScreen()) ;
+    Future.delayed(const Duration(seconds: 2), () {
+     pushReplacementTo(context, Routes.welcome);
     });
   }
 
