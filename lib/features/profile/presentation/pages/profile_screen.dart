@@ -1,5 +1,7 @@
 import 'package:bookia_store_app/core/routes/navigations.dart';
+import 'package:bookia_store_app/core/routes/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 
 import '../../../../core/constants/app_images.dart';
@@ -19,6 +21,9 @@ class ProfileScreen extends StatelessWidget {
         elevation: 0.0,
         centerTitle: true,
         title: const Text('Profile'),
+        actions: [
+          IconButton(onPressed: (){}, icon: SvgPicture.asset(AppImages.logoutSvg)) ,
+        ],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -38,27 +43,49 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ),
                   const Gap(20),
-                   const Text(
-                    'UserName',
-                    style: TextStyles.textStyle20,
-                  )
+                   Column(
+                     crossAxisAlignment: CrossAxisAlignment.start,
+                     children: [
+                       const Text(
+                        'UserName',
+                        style: TextStyles.textStyle20,
+                                         ),
+                        Text(
+                         'email@gmail.com',
+                         style: TextStyles.textStyle15.copyWith(
+                           color: AppColors.greyColor
+                         ),
+                       ),
+                     ],
+                   )
                 ],
               ),
               const Gap(20),
-              ContainerWidget(name: 'My Doctors' , onTap: (){
+              ContainerWidget(name: 'My Orders' , onTap: (){
                 // push Replacement to favourite screen
               },) ,
               const Gap(20),
-              ContainerWidget(name: 'My Appointment' , onTap: (){
-                //push Replacement to  Appointment screen
+              ContainerWidget(name: 'Edit Profile' , onTap: (){
+                pushTo(context, Routes.editProfile) ;
               }) ,
               const Gap(20),
-              ContainerWidget(name: 'Edit Profile' , onTap: ()
+              ContainerWidget(name: 'Reset Password' , onTap: ()
               {
                 // pushTo(context:  context,path:  Routes.editProfile) ;
               },) ,
               const Gap(20),
-              ContainerWidget(name: 'Logout' , onTap: () {
+              ContainerWidget(name: 'FAQ' , onTap: ()
+              {
+                // pushTo(context:  context,path:  Routes.editProfile) ;
+              },) ,
+              const Gap(20),
+              ContainerWidget(name: 'Contact Us' , onTap: ()
+              {
+                // pushTo(context:  context,path:  Routes.editProfile) ;
+              },) ,
+              const Gap(20),
+
+              ContainerWidget(name: 'Privacy & Terms' , onTap: () {
                 showDialog(
                     context: context,
                     barrierDismissible: false,

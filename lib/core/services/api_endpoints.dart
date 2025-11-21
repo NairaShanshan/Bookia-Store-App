@@ -22,11 +22,12 @@ class EndPoints {
   static const String addToCart = '/add-to-cart' ;
   static const String removeFromCart = '/remove-from-cart' ;
   static const String updateCart = '/update-cart' ;
-  static const String checkout = '/checkout' ;
+
 
 
   //order
   static const String placeOrder = '/place-order' ;
+  static const String checkout = '/checkout' ;
 
 
 }

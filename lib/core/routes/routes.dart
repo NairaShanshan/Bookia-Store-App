@@ -3,6 +3,7 @@ import 'package:bookia_store_app/features/cart/presentation/pages/place_order_sc
 import 'package:bookia_store_app/features/home/data/models/response/best_seller_response/BestSellerResponse.dart';
 import 'package:bookia_store_app/features/home/presentation/cubit/home_cubit.dart';
 import 'package:bookia_store_app/features/main/main_app_screen.dart';
+import 'package:bookia_store_app/features/profile/presentation/pages/edit_profile.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
@@ -24,6 +25,7 @@ class Routes {
   static const String detailsScreen = '/detailsScreen';
   static const String placeOrder = '/placeOrder';
   static const String submitOrder = '/submitOrder';
+  static const String editProfile = '/editProfile';
 
   static final routes = GoRouter(
     initialLocation: splash,
@@ -73,6 +75,9 @@ class Routes {
 
             ),
           )),
+      GoRoute(
+          path: editProfile,
+          builder: (context, state) => EditProfileScreen()),
 
       // GoRoute(
       //    path: forgetSendEmail,

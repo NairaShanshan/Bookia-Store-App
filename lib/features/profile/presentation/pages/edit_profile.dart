@@ -6,76 +6,34 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 
 import '../../../../core/constants/app_images.dart';
-import '../../../../core/utils/app_colors.dart';
-import '../../../../core/utils/text_styles.dart';
+
+import '../../../../core/widgets/text_form_field.dart';
 
 
 class EditProfileScreen extends StatelessWidget {
-  const EditProfileScreen({super.key});
+   EditProfileScreen({super.key});
+
+  final nameController = TextEditingController() ;
+  final phoneController = TextEditingController() ;
+  final addressController = TextEditingController() ;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: AppColors.primaryColor,
-        toolbarHeight: 250,
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(25),
-              bottomRight: Radius.circular(25),
-            )),
-        title: Stack(
-          children:[
-            PositionedDirectional(
-              start: -5,
-                top: -6,
-                child: IconButton(onPressed: (){
-                  pop(context) ;
-                }, icon:const  Icon(Icons.arrow_back_ios_new , color: AppColors.backgroundColor,))) ,
-
-            Column(
-            children: [
-              Text(
-                'Set up your profile',
-                maxLines: 1,
-                textAlign: TextAlign.center,
-                style: TextStyles.textStyle20.copyWith(
-                  color: AppColors.accentColor,
-                ),
-              ),
-              const Gap(20),
-              Text(
-                'Update your profile to connect your doctor with better impression ',
-                maxLines: 2,
-                textAlign: TextAlign.center,
-                style: TextStyles.textStyle16
-                    .copyWith(color: AppColors.accentColor),
-              ),
-              const Gap(20),
-              Stack(
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(60),
-                    child: Image.asset(
-                      AppImages.book,
-                      width: 110,
-                      height: 110,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  Positioned(
-                      bottom: -8,
-                      right: -8,
-                      child: IconButton(
-                          onPressed: () {},
-                          icon: SvgPicture.asset(AppImages.cameraSvg)))
-                ],
-              )
-            ],
-          ),
-          ]
+        title: Row(
+          children: [
+            GestureDetector(
+                onTap: (){
+                  pop(context);
+                },
+                child: SvgPicture.asset(AppImages.backSvg)),
+            const Gap(70) ,
+            const Text('Edit Profile'),
+          ],
         ),
+
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -83,54 +41,47 @@ class EditProfileScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Personal Information',
-                style: TextStyles.textStyle20,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+
+                ],
               ),
               const Gap(15),
-              // MyTextFormField(
-              //   validateMessage: ,
-              //   controller: ,
-              //   hintText: 'Name',
-              //   keyboardType: TextInputType.name,
-              //   suffixIcon:
-              //   IconButton(onPressed: () {}, icon: const Icon(Icons.edit)),
-              //
-              // ),
+              MyTextFormField(
+                validateMessage:'Please Enter Your Name' ,
+                controller:nameController ,
+                hintText: 'Full Name',
+                keyboardType: TextInputType.name,
+
+              ),
               const Gap(15),
-              // MainTextFormField(
-              //   hintText: 'Phone',
-              //   textInputType: TextInputType.phone,
-              //   borderColor: Colors.transparent,
-              //   suffixIcon:
-              //   IconButton(onPressed: () {}, icon: const Icon(Icons.edit)),
-              //   suffixIconColor: AppColors.greyColor,
-              // ),
+              MyTextFormField(
+                validateMessage:'Please Enter Your Phone' ,
+                controller:phoneController ,
+                hintText: 'Phone',
+                keyboardType: TextInputType.phone,
+
+              ),
               const Gap(15),
-              // MainTextFormField(
-              //   hintText: 'Date of birth',
-              //   textInputType: TextInputType.datetime,
-              //   borderColor: Colors.transparent,
-              //   suffixIcon:
-              //   IconButton(onPressed: () {}, icon: const Icon(Icons.edit)),
-              //   suffixIconColor: AppColors.greyColor,
-              // ),
-              const Gap(15),
-              // MainTextFormField(
-              //   hintText: 'Address',
-              //   textInputType: TextInputType.streetAddress,
-              //   borderColor: Colors.transparent,
-              //   suffixIcon:
-              //   IconButton(onPressed: () {}, icon: const Icon(Icons.edit)),
-              //   suffixIconColor: AppColors.greyColor,
-              // ),
-              const Gap(40),
-              MyElevatedButton(
-                text: 'Update Profile',
-                width: double.infinity,
-                onPressed: () {},
-              )
+              MyTextFormField(
+                validateMessage:'Please Enter Your Address' ,
+                controller:addressController ,
+                hintText: 'Address',
+                keyboardType: TextInputType.streetAddress,
+
+              ),
             ],
+          ),
+        ),
+      ),
+      bottomNavigationBar:  SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: MyElevatedButton(
+            text: 'Update Profile',
+            width: double.infinity,
+            onPressed: () {},
           ),
         ),
       ),
