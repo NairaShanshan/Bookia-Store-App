@@ -87,7 +87,7 @@ class CreateNewPasswordScreen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => PasswordChanged()));
+                              builder: (context) =>const PasswordChanged()));
                     },
                     text: 'Reset Password'),
               ],

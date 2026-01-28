@@ -3,6 +3,7 @@ class AppImages {
   static const String logoSvg = 'assets/images/logo2.svg' ;
 
   static const String splash = 'assets/images/splash_image.jpg' ;
+  static const String noProfilePicture = 'assets/images/NoProfilePicture.jpg' ;
   static const String book = 'assets/images/book1.png' ;
 
 

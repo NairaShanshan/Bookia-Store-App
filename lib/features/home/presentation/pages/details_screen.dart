@@ -14,8 +14,9 @@ import 'package:gap/gap.dart';
 import '../../data/models/response/best_seller_response/BestSellerResponse.dart';
 
 class DetailsScreen  extends StatelessWidget {
-  const DetailsScreen ({super.key,required this.product});
+  const DetailsScreen ({super.key,required this.product, required this.heroTag});
   final Product product ;
+  final String heroTag;
   @override
   Widget build(BuildContext context) {
     return BlocListener<HomeCubit , HomeStates>(
@@ -59,7 +60,7 @@ class DetailsScreen  extends StatelessWidget {
                 child: Column(
                   children: [
                     Hero(
-                      tag: product.id ?? '',
+                      tag: heroTag,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(7),
                         child: Image.network(product.image ?? '' ,

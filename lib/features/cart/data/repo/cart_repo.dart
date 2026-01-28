@@ -1,9 +1,10 @@
 import 'dart:developer';
 
-import 'package:bookia_store_app/core/services/api_endpoints.dart';
-import 'package:bookia_store_app/core/services/dio_provider.dart';
+import 'package:bookia_store_app/core/services/api/api_endpoints.dart';
+import 'package:bookia_store_app/core/services/api/dio_provider.dart';
 
 
+import '../../../../core/services/local/shared_pref.dart';
 import '../models/cart_response/cart_response.dart';
 import '../models/requests/place_order_params.dart';
 
@@ -12,7 +13,7 @@ class CartRepo {
   static Future<CartResponse?> getCart() async{
     try {
       var res = await DioProvider.get(endPoint: EndPoints.cart ,headers: {
-        'Authorization' : 'Bearer 10412|yBqz6WJNwFnpyNCqdCpJ5yr4zd3OVuJThRZLbpTf' ,
+      'Authorization': "Bearer ${SharedPref.getToken()}",
       } ) ;
 
       if(res.statusCode == 200 ) {
@@ -34,7 +35,7 @@ class CartRepo {
 
     try {
       var res =await DioProvider.post(endPoint: EndPoints.addToCart , headers: {
-        'Authorization' : 'Bearer 10412|yBqz6WJNwFnpyNCqdCpJ5yr4zd3OVuJThRZLbpTf' ,
+        'Authorization': "Bearer ${SharedPref.getToken()}",
       } , data:  {
         "product_id" : id ,
       }) ;
@@ -54,7 +55,7 @@ class CartRepo {
 
     try {
       var res =await DioProvider.post(endPoint: EndPoints.removeFromCart , headers: {
-        'Authorization' : 'Bearer 10412|yBqz6WJNwFnpyNCqdCpJ5yr4zd3OVuJThRZLbpTf' ,
+        'Authorization': "Bearer ${SharedPref.getToken()}",
       } , data:  {
         "cart_item_id" : id ,
       }) ;
@@ -79,7 +80,7 @@ class CartRepo {
         'quantity' : itemQuantity ,
       } ,
       headers: {
-        'Authorization' : 'Bearer 10412|yBqz6WJNwFnpyNCqdCpJ5yr4zd3OVuJThRZLbpTf' ,
+        'Authorization': "Bearer ${SharedPref.getToken()}",
       }) ;
 
       if(res.statusCode == 201) {
@@ -100,7 +101,7 @@ class CartRepo {
     try {
       var res = await DioProvider.get(endPoint: EndPoints.checkout ,
       headers: {
-        'Authorization' : 'Bearer 10412|yBqz6WJNwFnpyNCqdCpJ5yr4zd3OVuJThRZLbpTf' ,
+        'Authorization': "Bearer ${SharedPref.getToken()}",
       }) ;
 
       if(res.statusCode == 200){
@@ -119,7 +120,7 @@ class CartRepo {
     try {
       var res = await DioProvider.post(endPoint: EndPoints.placeOrder ,
       headers: {
-        'Authorization' : 'Bearer 10412|yBqz6WJNwFnpyNCqdCpJ5yr4zd3OVuJThRZLbpTf' ,
+        'Authorization': "Bearer ${SharedPref.getToken()}",
       } , data: params.toJson()) ;
 
       if(res.statusCode == 201) {

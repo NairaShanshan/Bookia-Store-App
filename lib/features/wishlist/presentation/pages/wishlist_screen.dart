@@ -31,7 +31,7 @@ class WishListScreen extends StatelessWidget {
             builder: (context, state) {
           var cubit = context.read<WishListCubit>();
           if (state is! WishListSuccessState) {
-            return const Center(child: CircularProgressIndicator());
+            return const  Center(child: CircularProgressIndicator(color: AppColors.primaryColor,));
           } else if (cubit.products.isEmpty ) {
             return _emptyWishlist();
           } else {

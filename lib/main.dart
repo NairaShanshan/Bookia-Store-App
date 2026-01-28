@@ -1,18 +1,20 @@
 
 import 'package:bookia_store_app/core/routes/routes.dart';
-import 'package:bookia_store_app/core/services/dio_provider.dart';
+import 'package:bookia_store_app/core/services/api/dio_provider.dart';
+import 'package:bookia_store_app/core/services/local/shared_pref.dart';
 import 'package:bookia_store_app/core/utils/app_colors.dart';
 import 'package:bookia_store_app/core/utils/app_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
 
   DioProvider.init() ;
-
+  await SharedPref.init() ;
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor: Colors.transparent, // أو Colors.white
+    statusBarColor: Colors.transparent,
     statusBarIconBrightness: Brightness.dark,
     statusBarBrightness: Brightness.light,
   ));

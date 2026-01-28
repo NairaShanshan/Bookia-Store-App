@@ -1,20 +1,23 @@
-
 import 'package:bookia_store_app/core/constants/app_images.dart';
 import 'package:bookia_store_app/core/utils/app_colors.dart';
 import 'package:bookia_store_app/core/utils/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-
 class MyTextFormField extends StatelessWidget {
-  const  MyTextFormField(
+  const MyTextFormField(
       {super.key,
       required this.hintText,
       required this.validateMessage,
       required this.controller,
       required this.keyboardType,
-      this.suffixPressed,  this.suffixIcon, this.readOnly=false, this.onTap
-       });
+      this.suffixPressed,
+      this.suffixIcon,
+      this.readOnly = false,
+      this.onTap,
+      this.textInputAction,
+      this.onChanged,
+      this.onFieldSubmitted});
 
   final String hintText;
 
@@ -25,27 +28,33 @@ class MyTextFormField extends StatelessWidget {
   final TextInputType keyboardType;
 
   final bool isPassword = false;
-  final bool readOnly ;
+  final bool readOnly;
 
   final Function()? suffixPressed;
-  final Function()? onTap ;
-  final Widget? suffixIcon ;
+  final Function()? onTap;
 
+  final Widget? suffixIcon;
 
+  final TextInputAction? textInputAction;
+  final Function(String)? onChanged;
+  final Function(String)? onFieldSubmitted;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      textInputAction: textInputAction,
+      onChanged: onChanged,
+      onFieldSubmitted: onFieldSubmitted,
       onTap: onTap,
       controller: controller,
       keyboardType: keyboardType,
-      readOnly: readOnly ,
+      readOnly: readOnly,
       obscureText: isPassword,
       decoration: InputDecoration(
         filled: true,
         fillColor: AppColors.accentColor,
         hintText: hintText,
-        suffix: ( suffixPressed != null)
+        suffix: (suffixPressed != null)
             ? IconButton(
                 onPressed: suffixPressed,
                 icon: SvgPicture.asset(AppImages.eyeSvg),
@@ -54,7 +63,7 @@ class MyTextFormField extends StatelessWidget {
         suffixIcon: suffixIcon,
         hintStyle: TextStyles.textStyle15.copyWith(
           color: AppColors.greyColor,
-        ) ,
+        ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: const BorderSide(
@@ -65,18 +74,16 @@ class MyTextFormField extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           borderSide: const BorderSide(
             color: AppColors.borderColor,
-
           ),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide:const  BorderSide(color: AppColors.errorColor),
+          borderSide: const BorderSide(color: AppColors.errorColor),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide:const  BorderSide(color: AppColors.errorColor),
+          borderSide: const BorderSide(color: AppColors.errorColor),
         ),
-
       ),
       validator: (value) {
         if (value!.isEmpty) {

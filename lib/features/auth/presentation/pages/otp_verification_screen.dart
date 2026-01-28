@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bookia_store_app/core/widgets/elevated_button.dart';
 import 'package:bookia_store_app/features/auth/presentation/pages/create_new_password_screen.dart';
 import 'package:bookia_store_app/features/auth/presentation/pages/login_screen.dart';
@@ -80,7 +82,7 @@ class OTPVerificationScreen extends StatelessWidget {
                     defaultPinTheme: defaultPinTheme,
                     focusedPinTheme: defaultPinTheme.copyWith(
                       decoration: BoxDecoration(
-                        border: Border.all(color: Color(0xFFBFA054)),
+                        border: Border.all(color:const  Color(0xFFBFA054)),
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
@@ -92,7 +94,7 @@ class OTPVerificationScreen extends StatelessWidget {
                       ),
                     ),
                     onCompleted: (pin) {
-                      print("OTP Entered: $pin");
+                      log("OTP Entered: $pin") ;
                     },
                   ),
                 ),
@@ -100,7 +102,7 @@ class OTPVerificationScreen extends StatelessWidget {
                 const SizedBox(height: 30),
                 MyElevatedButton(
                   onPressed: () {
-                    print("Verify OTP: ${otpController.text}");
+                    log("Verify OTP: ${otpController.text}");
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -128,7 +130,7 @@ class OTPVerificationScreen extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => LoginScreen()),
+                              builder: (context) =>const  LoginScreen()),
                         );
                       },
                       child: const Text(

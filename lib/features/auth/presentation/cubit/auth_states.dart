@@ -8,5 +8,6 @@ class AuthSuccessState extends AuthStates {}
 
 class AuthErrorState extends AuthStates {}
 
+class LogoutSuccessState extends AuthStates {}
 
 

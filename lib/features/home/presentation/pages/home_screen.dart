@@ -1,7 +1,10 @@
 import 'package:bookia_store_app/core/constants/app_images.dart';
+import 'package:bookia_store_app/core/routes/navigations.dart';
+import 'package:bookia_store_app/core/routes/routes.dart';
 
 import 'package:bookia_store_app/features/home/presentation/cubit/home_cubit.dart';
 import 'package:bookia_store_app/features/home/presentation/cubit/home_states.dart';
+import 'package:bookia_store_app/features/home/presentation/widgets/all_products_widget.dart';
 import 'package:bookia_store_app/features/home/presentation/widgets/slider_widget.dart';
 
 import 'package:flutter/material.dart';
@@ -9,7 +12,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 
+import '../../../../core/utils/app_colors.dart';
 import '../widgets/best_seller_widget.dart';
+import '../widgets/new_arrivals_widget.dart';
 
 
 class HomeScreen extends StatelessWidget {
@@ -18,7 +23,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => HomeCubit()..getInitData(),
+      create: (context) => HomeCubit()..getSlider()..getBestSeller()..getNewArrivals()..getAllProducts(),
       child: Scaffold(
         appBar: AppBar(
           title: SvgPicture.asset(
@@ -27,7 +32,9 @@ class HomeScreen extends StatelessWidget {
           ),
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                pushTo(context, Routes.search) ;
+              },
               icon: SvgPicture.asset(
                 AppImages.searchSvg,
               ),
@@ -37,7 +44,7 @@ class HomeScreen extends StatelessWidget {
         body: BlocBuilder<HomeCubit , HomeStates>(
           builder: (context , state ) {
             if(state is ! SuccessHomeState ) {
-              return const  Center(child: CircularProgressIndicator(),) ;
+              return const  Center(child: CircularProgressIndicator(color: AppColors.primaryColor,));
             }
             var cubit = context.read<HomeCubit>() ;
             return SingleChildScrollView(
@@ -47,7 +54,13 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     HomeSlider(sliders: cubit.sliders,) ,
                     const Gap(25),
-                    BestsellerProducts(products: cubit.products,) ,
+                    BestsellerProducts(products: cubit.bestSellers,) ,
+                    const Gap(25) ,
+                    NewArrivalsWidget(products: cubit.newArrivals,) ,
+                    const Gap(25) ,
+                    AllProductsWidget(products: cubit.allProducts) ,
+
+
 
                   ],
                 ),

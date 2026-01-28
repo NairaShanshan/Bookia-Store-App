@@ -9,20 +9,26 @@ import '../../../../core/widgets/elevated_button.dart';
 import '../../data/models/response/best_seller_response/BestSellerResponse.dart';
 
 class BookCard extends StatelessWidget {
-  const BookCard({super.key, required this.product});
+  const BookCard({super.key, required this.product, required this.height, required this.width, required this.heroTag});
 
   final Product product ;
+  final double  height ;
+  final double  width ;
+  final String heroTag;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        pushTo(context, Routes.detailsScreen , extra: product) ;
+        pushTo(context, Routes.detailsScreen , extra: {
+          'product': product,
+          'heroTag': heroTag,
+        }) ;
       },
       child: Container(
         padding:const  EdgeInsets.all(10),
-        height: 163,
-        width: 281,
+        height: height,
+        width: width,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12) ,
           color: AppColors.cardColor ,
@@ -31,7 +37,8 @@ class BookCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Hero(
-              tag: product.id ?? '',
+              tag: heroTag,
+
               child: ClipRRect(
                 borderRadius : BorderRadius.circular(5)   ,
                 child: Image.network(

@@ -66,7 +66,7 @@ class Data {
   Data.fromJson(dynamic json) {
     currentPage = json['current_page'];
 
-    // ✅ التحويل الصحيح لقائمة المنتجات
+
     if (json['data'] != null) {
       data = (json['data'] as List)
           .map((item) => Product.fromJson(item))

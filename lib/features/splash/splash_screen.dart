@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bookia_store_app/core/routes/navigations.dart';
+import 'package:bookia_store_app/core/services/local/shared_pref.dart';
 import 'package:bookia_store_app/core/utils/app_colors.dart';
 import 'package:bookia_store_app/core/utils/text_styles.dart';
 import 'package:flutter/material.dart';
@@ -19,10 +20,16 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    // TODO: implement initState
+
     super.initState();
+    String ? token = SharedPref.getToken() ;
     Future.delayed(const Duration(seconds: 2), () {
-     pushReplacementTo(context, Routes.welcome);
+      if(token != null ){
+        pushReplacementTo(context, Routes.main) ;
+      }else{
+        pushReplacementTo(context, Routes.welcome);
+      }
+
     });
   }
 

@@ -22,7 +22,7 @@ class CartCubit extends Cubit<CartStates> {
 
   final governorateController = TextEditingController();
 
-  final formkey = GlobalKey<FormState>() ;
+  final formKey = GlobalKey<FormState>() ;
 
   int selectedGovId = -1 ;
 
