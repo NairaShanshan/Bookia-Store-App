@@ -1,9 +1,10 @@
 import 'package:bookia_store_app/core/routes/navigations.dart';
 import 'package:bookia_store_app/core/routes/routes.dart';
 import 'package:bookia_store_app/core/services/local/shared_pref.dart';
+import 'package:bookia_store_app/features/profile/presentation/widgets/logout.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:gap/gap.dart';
 
 import '../../../../core/constants/app_images.dart';
@@ -24,70 +25,10 @@ class ProfileScreen extends StatelessWidget {
         elevation: 0.0,
         centerTitle: true,
         title: const Text('Profile'),
-        actions: [
-          IconButton(onPressed: (){
+        actions:const [
 
-            showDialog(
-                context: context,
-                barrierDismissible: false,
-                builder: (context) {
-                  return Dialog(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    backgroundColor: AppColors.backgroundColor,
-                    child: Container(
-                      padding: const EdgeInsets.all(20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          const Text(
-                            'Logout',
-                            style: TextStyles.textStyle20,
-                          ),
-                          const Gap(10),
-                          Text(
-                            'Are you sure you want to logout ?',
-                            style: TextStyles.textStyle20
-                                .copyWith(color: AppColors.greyColor),
-                          ),
-                          const Gap(30),
-                          Row(
-                            mainAxisAlignment:
-                            MainAxisAlignment.spaceBetween,
-                            children: [
-                              TextButton(
-                                  onPressed: () {
-                                    pop(context);
-                                  },
-                                  child: Text(
-                                    'Cancel',
-                                    style:
-                                    TextStyles.textStyle16.copyWith(
-                                      color: AppColors.primaryColor,
-                                    ),
-                                  )),
-                              TextButton(
-                                  onPressed: () {
+           Logout() ,
 
-                                  },
-                                  child: Text(
-                                    'Yes',
-                                    style:
-                                    TextStyles.textStyle16.copyWith(
-                                      color: AppColors.primaryColor,
-                                    ),
-                                  )),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
-                });
-
-          }, icon: SvgPicture.asset(AppImages.logoutSvg)) ,
         ],
       ),
       body: SingleChildScrollView(

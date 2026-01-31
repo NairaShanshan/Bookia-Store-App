@@ -12,7 +12,6 @@ import 'package:bookia_store_app/features/search/presentation/pages/search_scree
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../features/auth/presentation/cubit/auth_cubit.dart';
 import '../../features/auth/presentation/pages/login_screen.dart';
 import '../../features/auth/presentation/pages/register_screen.dart';
 import '../../features/cart/presentation/pages/submit_order.dart';
@@ -46,17 +45,11 @@ class Routes {
       ),
       GoRoute(
         path: login,
-        builder: (context, state) => BlocProvider(
-          create: (context) => AuthCubit(),
-          child: const LoginScreen(),
-        ),
+        builder: (context, state) => const LoginScreen(),
       ),
       GoRoute(
         path: register,
-        builder: (context, state) => BlocProvider(
-          create: (context) => AuthCubit(),
-          child: const RegisterScreen(),
-        ),
+        builder: (context, state) => const RegisterScreen(),
       ),
       GoRoute(
         path: main,
