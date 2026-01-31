@@ -69,12 +69,3 @@ The app's main interface is organized with a **Bottom Navigation Bar** including
 
 ---
 
-## Screenshots
-*(Add your screenshots here when ready)*
-
----
-
-## Installation
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/bookia_store_app.git
