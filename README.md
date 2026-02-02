@@ -68,4 +68,177 @@ The app's main interface is organized with a **Bottom Navigation Bar** including
 - Support **multi-language** and **dark mode** themes.
 
 ---
+## 📸 Screenshots
+_All app screens showcasing the complete user journey_
+
+---
+
+### 🚀 App Launch
+<p align="center">
+  <figure>
+    <figcaption><b>Splash</b></figcaption>
+    <img src="screenshots/splash.jpg" width="200" />
+  </figure>
+
+  <figure>
+    <figcaption><b>Welcome</b></figcaption>
+    <img src="screenshots/welcome.jpg" width="200" />
+  </figure>
+
+  <figure>
+    <figcaption><b>Loading</b></figcaption>
+    <img src="screenshots/loading.jpg" width="200" />
+  </figure>
+</p>
+
+---
+
+### 🔐 Authentication
+<p align="center">
+  <figure>
+    <figcaption><b>Login</b></figcaption>
+    <img src="screenshots/login.jpg" width="200" />
+  </figure>
+
+  <figure>
+    <figcaption><b>Register</b></figcaption>
+    <img src="screenshots/register.jpg" width="200" />
+  </figure>
+</p>
+
+---
+
+### 🏠 Home
+<p align="center">
+  <figure>
+    <figcaption><b>Best Sellers</b></figcaption>
+    <img src="screenshots/home.jpg" width="200" />
+  </figure>
+
+  <figure>
+    <figcaption><b>New Arrivals</b></figcaption>
+    <img src="screenshots/home2.jpg" width="200" />
+  </figure>
+
+  <figure>
+    <figcaption><b>All Products</b></figcaption>
+    <img src="screenshots/home3.jpg" width="200" />
+  </figure>
+</p>
+
+---
+
+### 🔍 Search
+<p align="center">
+  <figure>
+    <figcaption><b>Search Result 1</b></figcaption>
+    <img src="screenshots/search1.jpg" width="200" />
+  </figure>
+
+  <figure>
+    <figcaption><b>Search Result 2</b></figcaption>
+    <img src="screenshots/search2.jpg" width="200" />
+  </figure>
+
+  <figure>
+    <figcaption><b>Search Result 3</b></figcaption>
+    <img src="screenshots/search3.jpg" width="200" />
+  </figure>
+</p>
+
+---
+
+### ❤️ Wishlist
+<p align="center">
+  <figure>
+    <figcaption><b>Wishlist</b></figcaption>
+    <img src="screenshots/wishlist.jpg" width="200" />
+  </figure>
+
+  <figure>
+    <figcaption><b>Empty Wishlist</b></figcaption>
+    <img src="screenshots/emptywWshlist.jpg" width="200" />
+  </figure>
+</p>
+
+---
+
+### 🛒 Cart
+<p align="center">
+  <figure>
+    <figcaption><b>Cart</b></figcaption>
+    <img src="screenshots/cart.jpg" width="200" />
+  </figure>
+
+  <figure>
+    <figcaption><b>Empty Cart</b></figcaption>
+    <img src="screenshots/emptyCart.jpg" width="200" />
+  </figure>
+</p>
+
+---
+
+### 📘 Book Details
+<p align="center">
+  <figure>
+    <figcaption><b>Book Details</b></figcaption>
+    <img src="screenshots/details.jpg" width="200" />
+  </figure>
+</p>
+
+---
+
+### 👤 Profile & Settings
+<p align="center">
+  <figure>
+    <figcaption><b>Profile</b></figcaption>
+    <img src="screenshots/profile.jpg" width="200" />
+  </figure>
+
+  <figure>
+    <figcaption><b>Edit Profile</b></figcaption>
+    <img src="screenshots/editProfile.jpg" width="200" />
+  </figure>
+
+  <figure>
+    <figcaption><b>Change Password</b></figcaption>
+    <img src="screenshots/changePassword.jpg" width="200" />
+  </figure>
+
+  <figure>
+    <figcaption><b>Logout</b></figcaption>
+    <img src="screenshots/logout.jpg" width="200" />
+  </figure>
+</p>
+
+---
+
+### 📦 Orders Flow
+<p align="center">
+  <figure>
+    <figcaption><b>My Orders</b></figcaption>
+    <img src="screenshots/orders.jpg" width="200" />
+  </figure>
+
+  <figure>
+    <figcaption><b>Place Order</b></figcaption>
+    <img src="screenshots/placeOrder.jpg" width="200" />
+  </figure>
+
+  <figure>
+    <figcaption><b>Order Completed</b></figcaption>
+    <img src="screenshots/orderDone.jpg" width="200" />
+  </figure>
+</p>
+
+---
+
+### 🌍 Location
+<p align="center">
+  <figure>
+    <figcaption><b>Governorates</b></figcaption>
+    <img src="screenshots/governorate.jpg" width="200" />
+  </figure>
+</p>
+
 
