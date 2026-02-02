@@ -75,21 +75,22 @@ _All app screens showcasing the complete user journey_
 
 ### 🚀 App Launch
 <p align="center">
-  <figure>
+  <figure style="display:inline-block; text-align:center; margin:10px">
     <figcaption><b>Splash</b></figcaption>
-    <img src="screenshots/splash.jpg" width="200" />
+    <img src="screenshots/splash.jpg" width="200"/>
   </figure>
 
-  <figure>
+  <figure style="display:inline-block; text-align:center; margin:10px">
     <figcaption><b>Welcome</b></figcaption>
-    <img src="screenshots/welcome.jpg" width="200" />
+    <img src="screenshots/welcome.jpg" width="200"/>
   </figure>
 
-  <figure>
+  <figure style="display:inline-block; text-align:center; margin:10px">
     <figcaption><b>Loading</b></figcaption>
-    <img src="screenshots/loading.jpg" width="200" />
+    <img src="screenshots/loading.jpg" width="200"/>
   </figure>
 </p>
+
 
 ---
 
