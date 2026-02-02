@@ -96,151 +96,168 @@ _All app screens showcasing the complete user journey_
 ---
 
 ### 🔐 Authentication
-<p align="center">
-  <figure>
-    <figcaption><b>Login</b></figcaption>
-    <img src="screenshots/login.jpg" width="200" />
-  </figure>
+<table align="center">
+  <tr>
+    <td align="center">
+      <b>Login</b><br>
+      <img src="screenshots/login.jpg" width="200"/>
+    </td>
+    <td align="center">
+      <b>Register</b><br>
+      <img src="screenshots/register.jpg" width="200"/>
+    </td>
+  </tr>
+</table>
 
-  <figure>
-    <figcaption><b>Register</b></figcaption>
-    <img src="screenshots/register.jpg" width="200" />
-  </figure>
-</p>
 
 ---
 
 ### 🏠 Home
-<p align="center">
-  <figure>
-    <figcaption><b>Best Sellers</b></figcaption>
-    <img src="screenshots/home.jpg" width="200" />
-  </figure>
+<table align="center">
+  <tr>
+    <td align="center">
+      <b>Best Sellers</b><br>
+      <img src="screenshots/home.jpg" width="200"/>
+    </td>
+    <td align="center">
+      <b>New Arrivals</b><br>
+      <img src="screenshots/home2.jpg" width="200"/>
+    </td>
+    <td align="center">
+      <b>All Products</b><br>
+      <img src="screenshots/home3.jpg" width="200"/>
+    </td>
+  </tr>
+</table>
 
-  <figure>
-    <figcaption><b>New Arrivals</b></figcaption>
-    <img src="screenshots/home2.jpg" width="200" />
-  </figure>
-
-  <figure>
-    <figcaption><b>All Products</b></figcaption>
-    <img src="screenshots/home3.jpg" width="200" />
-  </figure>
-</p>
 
 ---
 
 ### 🔍 Search
-<p align="center">
-  <figure>
-    <figcaption><b>Search Result 1</b></figcaption>
-    <img src="screenshots/search1.jpg" width="200" />
-  </figure>
+<table align="center">
+  <tr>
+    <td align="center">
+      <b>Search Result 1</b><br>
+      <img src="screenshots/search1.jpg" width="200"/>
+    </td>
+    <td align="center">
+      <b>Search Result 2</b><br>
+      <img src="screenshots/search2.jpg" width="200"/>
+    </td>
+    <td align="center">
+      <b>Search Result 3</b><br>
+      <img src="screenshots/search3.jpg" width="200"/>
+    </td>
+  </tr>
+</table>
 
-  <figure>
-    <figcaption><b>Search Result 2</b></figcaption>
-    <img src="screenshots/search2.jpg" width="200" />
-  </figure>
-
-  <figure>
-    <figcaption><b>Search Result 3</b></figcaption>
-    <img src="screenshots/search3.jpg" width="200" />
-  </figure>
-</p>
 
 ---
 
 ### ❤️ Wishlist
-<p align="center">
-  <figure>
-    <figcaption><b>Wishlist</b></figcaption>
-    <img src="screenshots/wishlist.jpg" width="200" />
-  </figure>
+<table align="center">
+  <tr>
+    <td align="center">
+      <b>Wishlist</b><br>
+      <img src="screenshots/wishlist.jpg" width="200"/>
+    </td>
+    <td align="center">
+      <b>Empty Wishlist</b><br>
+      <img src="screenshots/emptywWshlist.jpg" width="200"/>
+    </td>
+  </tr>
+</table>
 
-  <figure>
-    <figcaption><b>Empty Wishlist</b></figcaption>
-    <img src="screenshots/emptywWshlist.jpg" width="200" />
-  </figure>
-</p>
 
 ---
 
 ### 🛒 Cart
-<p align="center">
-  <figure>
-    <figcaption><b>Cart</b></figcaption>
-    <img src="screenshots/cart.jpg" width="200" />
-  </figure>
+<table align="center">
+  <tr>
+    <td align="center">
+      <b>Cart</b><br>
+      <img src="screenshots/cart.jpg" width="200"/>
+    </td>
+    <td align="center">
+      <b>Empty Cart</b><br>
+      <img src="screenshots/emptyCart.jpg" width="200"/>
+    </td>
+  </tr>
+</table>
 
-  <figure>
-    <figcaption><b>Empty Cart</b></figcaption>
-    <img src="screenshots/emptyCart.jpg" width="200" />
-  </figure>
-</p>
 
 ---
 
 ### 📘 Book Details
-<p align="center">
-  <figure>
-    <figcaption><b>Book Details</b></figcaption>
-    <img src="screenshots/details.jpg" width="200" />
-  </figure>
-</p>
+<table align="center">
+  <tr>
+    <td align="center">
+      <b>Book Details</b><br>
+      <img src="screenshots/details.jpg" width="200"/>
+    </td>
+  </tr>
+</table>
+
 
 ---
 
 ### 👤 Profile & Settings
-<p align="center">
-  <figure>
-    <figcaption><b>Profile</b></figcaption>
-    <img src="screenshots/profile.jpg" width="200" />
-  </figure>
+<table align="center">
+  <tr>
+    <td align="center">
+      <b>Profile</b><br>
+      <img src="screenshots/profile.jpg" width="200"/>
+    </td>
+    <td align="center">
+      <b>Edit Profile</b><br>
+      <img src="screenshots/editProfile.jpg" width="200"/>
+    </td>
+    <td align="center">
+      <b>Change Password</b><br>
+      <img src="screenshots/changePassword.jpg" width="200"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <b>Logout</b><br>
+      <img src="screenshots/logout.jpg" width="200"/>
+    </td>
+  </tr>
+</table>
 
-  <figure>
-    <figcaption><b>Edit Profile</b></figcaption>
-    <img src="screenshots/editProfile.jpg" width="200" />
-  </figure>
-
-  <figure>
-    <figcaption><b>Change Password</b></figcaption>
-    <img src="screenshots/changePassword.jpg" width="200" />
-  </figure>
-
-  <figure>
-    <figcaption><b>Logout</b></figcaption>
-    <img src="screenshots/logout.jpg" width="200" />
-  </figure>
-</p>
 
 ---
 
 ### 📦 Orders Flow
-<p align="center">
-  <figure>
-    <figcaption><b>My Orders</b></figcaption>
-    <img src="screenshots/orders.jpg" width="200" />
-  </figure>
+<table align="center">
+  <tr>
+    <td align="center">
+      <b>My Orders</b><br>
+      <img src="screenshots/orders.jpg" width="200"/>
+    </td>
+    <td align="center">
+      <b>Place Order</b><br>
+      <img src="screenshots/placeOrder.jpg" width="200"/>
+    </td>
+    <td align="center">
+      <b>Order Completed</b><br>
+      <img src="screenshots/orderDone.jpg" width="200"/>
+    </td>
+  </tr>
+</table>
 
-  <figure>
-    <figcaption><b>Place Order</b></figcaption>
-    <img src="screenshots/placeOrder.jpg" width="200" />
-  </figure>
-
-  <figure>
-    <figcaption><b>Order Completed</b></figcaption>
-    <img src="screenshots/orderDone.jpg" width="200" />
-  </figure>
-</p>
 
 ---
 
 ### 🌍 Location
-<p align="center">
-  <figure>
-    <figcaption><b>Governorates</b></figcaption>
-    <img src="screenshots/governorate.jpg" width="200" />
-  </figure>
-</p>
+<table align="center">
+  <tr>
+    <td align="center">
+      <b>Governorates</b><br>
+      <img src="screenshots/governorate.jpg" width="200"/>
+    </td>
+  </tr>
+</table>
+
 
 
